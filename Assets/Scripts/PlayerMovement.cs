@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePosition;
     private Vector2 playerScreenPosition;
     private float angle;
-    [SerializeField] private float angleThreshold = 1.0f;
+    //[SerializeField] private float angleThreshold = 1.0f;
 
 
     private Vector3 clampedVelocity;
@@ -44,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Set initial player camera angle
         //playerCamera.playerCameraAngle;
+        playerCamera.transform.Rotate(new Vector3(playerCameraAngle, 0f, 0f), Space.Self); ;
+
 
         // get Rigidbody of parent GameObject
         rb = gameObject.GetComponentInParent(typeof(Rigidbody)) as Rigidbody;
@@ -85,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
        
         
-        Debug.Log(rb.velocity.magnitude);
+        //Debug.Log(rb.velocity.magnitude);
     }
 
 
